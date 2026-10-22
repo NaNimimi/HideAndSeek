@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+    <meta name="theme-color" content="#0B0E14" />
+    <title>%WEB_TITLE%</title>
+    <!-- Telegram Mini App SDK: должен загрузиться до приложения -->
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style id="expo-reset">
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        background: #0b0e14;
+        overscroll-behavior: none;
+        -webkit-tap-highlight-color: transparent;
+      }
+      body {
+        overflow: hidden;
+      }
+      * {
+        scrollbar-width: none;
+      }
+      ::-webkit-scrollbar {
+        display: none;
+      }
+      #root {
+        display: flex;
+        height: 100%;
+        flex: 1;
+      }
+    </style>
+  </head>
+
+  <body>
+    <noscript>Включи JavaScript, чтобы играть.</noscript>
+    <div id="root"></div>
+  </body>
+</html>
