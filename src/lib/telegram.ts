@@ -49,11 +49,13 @@ export const tg: WebApp | null = webApp && webApp.initData ? webApp : null;
 export const tgUser = tg?.initDataUnsafe.user ?? null;
 
 let startParamUsed = false;
-/** Код комнаты из ссылки t.me/бот/app?startapp=КОД (один раз). */
+/** Код комнаты из ссылки-приглашения (один раз). */
 export function takeStartCode(): string | null {
   if (startParamUsed) return null;
   startParamUsed = true;
-  const p = tg?.initDataUnsafe.start_param?.toUpperCase();
+  // startapp=КОД из ссылки на мини-апп или ?code=КОД из кнопки бота.
+  const fromUrl = Platform.OS === 'web' && typeof location !== 'undefined' ? new URLSearchParams(location.search).get('code') : null;
+  const p = (tg?.initDataUnsafe.start_param || fromUrl)?.toUpperCase();
   return p && /^[A-Z0-9]{5}$/.test(p) ? p : null;
 }
 

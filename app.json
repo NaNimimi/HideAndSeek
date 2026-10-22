@@ -36,14 +36,19 @@
     },
     "web": {
       "favicon": "./assets/favicon.png",
-      "output": "single",
+      "output": "static",
       "bundler": "metro",
       "name": "Прятки",
       "backgroundColor": "#0B0E14",
       "themeColor": "#0B0E14"
     },
     "plugins": [
-      "expo-router",
+      [
+        "expo-router",
+        {
+          "apiRoutes": true
+        }
+      ],
       "expo-font",
       "expo-dev-client",
       [
